@@ -90,7 +90,7 @@ const Register = () => {
             <StaggerItem index={1}>
               <CardHeader className="space-y-0 text-center relative z-10 pb-6">
                 <CardTitle className="text-lg md:text-2xl font-medium text-gray-700">
-                  Join HolidayHotel
+                  Join Roomzy
                 </CardTitle>
                 <CardDescription className="mt-0 text-gray-600">
                   Create your account to start booking

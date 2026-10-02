@@ -12,17 +12,17 @@ import PageContainer from "./PageContainer";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-primary-800 to-primary-900 text-white">
+    <footer className="bg-gradient-to-r from-gray-950 via-rose-950 to-gray-950 text-white">
       <PageContainer className="py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="bg-white p-2 rounded-xl">
-                <Building2 className="w-6 h-6 text-primary-600" />
+                <Building2 className="w-6 h-6 text-rose-600" />
               </div>
-              <span className="text-lg md:text-2xl font-medium">
-                HolidayHotel
+              <span className="text-xl md:text-2xl font-bold">
+                Roomzy
               </span>
             </div>
             <p className="text-gray-300 leading-relaxed">
@@ -157,7 +157,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary-300" />
-                <span className="text-gray-300">support@HolidayHotel.com</span>
+                <span className="text-gray-300">support@roomzy.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary-300" />

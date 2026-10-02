@@ -138,8 +138,10 @@ export type BookingType = {
   specialRequests?: string;
   cancellationReason?: string;
   refundAmount?: number;
-  /** Stripe PaymentIntent id used at booking time (for refunds) */
-  stripePaymentIntentId?: string;
+  /** Razorpay Order ID created at booking time (for refunds) */
+  razorpayOrderId?: string;
+  /** Razorpay Payment ID after successful payment */
+  razorpayPaymentId?: string;
   createdAt?: Date;
   updatedAt?: Date;
 };
@@ -158,7 +160,12 @@ export type HotelSearchResponse = {
 };
 
 export type PaymentIntentResponse = {
+  /** Razorpay Order ID */
   paymentIntentId: string;
-  clientSecret: string;
+  /** Razorpay Key ID — passed to frontend for Checkout init */
+  razorpayKeyId: string;
   totalCost: number;
+  /** Amount in paise (totalCost * 100) */
+  amount: number;
+  currency: string;
 };

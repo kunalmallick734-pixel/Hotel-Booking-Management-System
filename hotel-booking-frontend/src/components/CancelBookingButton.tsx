@@ -79,8 +79,8 @@ const CancelBookingButton = ({ booking, className }: Props) => {
       className={`mt-3 space-y-3 rounded-xl border border-red-200 bg-red-50 p-4 ${className || ""}`}
     >
       <p className="text-sm text-red-800">
-        Cancel this upcoming stay? Paid bookings receive a full Stripe refund
-        when a payment intent is on file.
+        Cancel this upcoming stay? Paid bookings receive a full refund
+        to the original payment method.
       </p>
       <label className="block text-sm font-medium text-gray-700">
         Reason (optional)

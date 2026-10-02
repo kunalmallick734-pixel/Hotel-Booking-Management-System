@@ -40,6 +40,16 @@ const testAccounts = {
     password: "12345678",
     name: "Test Admin",
   },
+  "hotel-owner": {
+    email: "owner@hotel.com",
+    password: "12345678",
+    name: "Hotel Owner",
+  },
+  guest: {
+    email: "guest@user.com",
+    password: "12345678",
+    name: "Guest User",
+  },
 };
 
 /** Same Robohash set1 as UsernameMenu — circle ring + Name · email row */
@@ -201,6 +211,26 @@ const SignIn = () => {
                         <TestAccountOptionLabel
                           name={testAccounts["test-admin"].name}
                           email={testAccounts["test-admin"].email}
+                        />
+                      </SelectItem>
+                                          
+                      <SelectItem
+                        value="hotel-owner"
+                        className="cursor-pointer font-normal text-gray-700 focus:bg-primary-50 focus:text-primary-900"
+                      >
+                        <TestAccountOptionLabel
+                          name={testAccounts["hotel-owner"].name}
+                          email={testAccounts["hotel-owner"].email}
+                        />
+                      </SelectItem>
+                                          
+                      <SelectItem
+                        value="guest"
+                        className="cursor-pointer font-normal text-gray-700 focus:bg-primary-50 focus:text-primary-900"
+                      >
+                        <TestAccountOptionLabel
+                          name={testAccounts.guest.name}
+                          email={testAccounts.guest.email}
                         />
                       </SelectItem>
                       {selectedRole && (

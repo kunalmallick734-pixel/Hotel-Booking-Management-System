@@ -5,8 +5,6 @@ import useSearchContext from "../hooks/useSearchContext";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import BookingDetailsSummary from "../components/BookingDetailsSummary";
-import { Elements } from "@stripe/react-stripe-js";
-import useAppContext from "../hooks/useAppContext";
 import {
   Card,
   CardContent,
@@ -17,7 +15,6 @@ import { Badge } from "../components/ui/badge";
 import { Loader2, CreditCard, Calendar, Users } from "lucide-react";
 
 const Booking = () => {
-  const { stripePromise } = useAppContext();
   const search = useSearchContext();
   const { hotelId } = useParams();
 
@@ -144,7 +141,7 @@ const Booking = () => {
                     {hotel.starRating} Stars
                   </Badge>
                   <Badge variant="outline" className="text-xs">
-                    £{hotel.pricePerNight}/night
+                    ₹{hotel.pricePerNight}/night
                   </Badge>
                 </div>
                 {hotel.type && hotel.type.length > 0 && (
@@ -161,7 +158,7 @@ const Booking = () => {
           </Card>
         </div>
 
-        {/* Booking Form */}
+        {/* Booking Form — no Stripe Elements wrapper needed for Razorpay */}
         <div className="space-y-6">
           {isLoadingPayment ? (
             <Card className="shadow-xl border-0 bg-white">
@@ -175,18 +172,11 @@ const Booking = () => {
           ) : currentUser && paymentIntentData ? (
             <Card className="shadow-xl border-0 bg-white">
               <CardContent className="p-0">
-                <Elements
-                  stripe={stripePromise}
-                  options={{
-                    clientSecret: paymentIntentData.clientSecret,
-                  }}
-                  key={paymentIntentData.clientSecret}
-                >
-                  <BookingForm
-                    currentUser={currentUser}
-                    paymentIntent={paymentIntentData}
-                  />
-                </Elements>
+                {/* Razorpay does NOT need a wrapper provider — the popup is initialized inline */}
+                <BookingForm
+                  currentUser={currentUser}
+                  paymentIntent={paymentIntentData}
+                />
               </CardContent>
             </Card>
           ) : (

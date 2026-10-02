@@ -88,7 +88,7 @@ const AdminBookings = () => {
           Bookings
         </h1>
         <p className="text-sm text-gray-500">
-          All reservations — cancel upcoming stays with Stripe refund when paid
+          All reservations — cancel upcoming stays with automatic refund when paid
         </p>
       </div>
       {isLoading ? (

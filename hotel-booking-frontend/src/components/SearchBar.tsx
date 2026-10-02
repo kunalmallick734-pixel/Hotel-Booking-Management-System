@@ -259,7 +259,7 @@ const SearchBar = () => {
           <div className="flex flex-col sm:flex-row gap-2 sm:col-span-2 lg:col-span-1">
             <Button
               type="submit"
-              className="flex-1 items-center text-white bg-primary-600 px-6 py-2 rounded-xl font-medium hover:bg-primary-500 hover:shadow-medium transition-all duration-200 group"
+              className="flex-1 items-center text-white bg-gradient-to-r from-red-800 via-rose-800 to-red-900 px-6 py-2.5 rounded-xl font-medium hover:from-red-900 hover:to-rose-950 hover:shadow-md transition-all duration-200 group"
             >
               Search
             </Button>

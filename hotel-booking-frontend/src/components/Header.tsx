@@ -15,18 +15,18 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-gradient-to-r from-primary-600 to-primary-700 shadow-large sticky top-0 z-50 h-[72px] flex items-center shrink-0">
+    <header className="bg-gradient-to-r from-red-900 via-rose-900 to-red-950 shadow-lg sticky top-0 z-50 h-[72px] flex items-center shrink-0 border-b border-red-800/30">
       <PageContainer>
         <div className="flex justify-between items-center h-full">
           <button
             onClick={handleLogoClick}
             className="flex items-center space-x-2 group"
           >
-            <div className="bg-white p-2 rounded-xl shadow-soft group-hover:shadow-medium transition-all duration-300">
-              <Building2 className="w-6 h-6 text-primary-600" />
+            <div className="bg-white/95 p-2 rounded-xl shadow-md group-hover:scale-105 transition-all duration-300">
+              <Building2 className="w-6 h-6 text-red-700" />
             </div>
-            <span className="text-lg md:text-2xl font-medium text-white tracking-tight group-hover:text-primary-100 transition-colors">
-              HolidayHotel
+            <span className="text-xl md:text-2xl font-bold text-white tracking-tight group-hover:text-red-100 transition-colors flex items-center gap-1">
+              Roomzy
             </span>
           </button>
           <div className="md:hidden">

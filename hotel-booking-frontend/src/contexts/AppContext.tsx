@@ -2,18 +2,17 @@ import React, { useState } from "react";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { useQuery } from "react-query";
 import * as apiClient from "../api-client";
-import { loadStripe, Stripe } from "@stripe/stripe-js";
 import { toast as sonnerToast } from "sonner";
 import type { ToastPayload } from "../lib/toast-messages";
 
-const STRIPE_PUB_KEY = import.meta.env.VITE_STRIPE_PUB_KEY || "";
+const RAZORPAY_KEY_ID = import.meta.env.VITE_RAZORPAY_KEY_ID || "";
 
 type ToastMessage = ToastPayload;
 
 export type AppContext = {
   showToast: (toastMessage: ToastMessage) => void;
   isLoggedIn: boolean;
-  stripePromise: Promise<Stripe | null>;
+  razorpayKeyId: string;
   showGlobalLoading: (message?: string) => void;
   hideGlobalLoading: () => void;
   isGlobalLoading: boolean;
@@ -23,8 +22,6 @@ export type AppContext = {
 export const AppContext = React.createContext<AppContext | undefined>(
   undefined
 );
-
-const stripePromise = loadStripe(STRIPE_PUB_KEY);
 
 /** Clear stale JWT keys so UI does not look logged-in after 401 */
 const clearAuthStorage = () => {
@@ -97,7 +94,7 @@ export const AppContextProvider = ({
       value={{
         showToast,
         isLoggedIn,
-        stripePromise,
+        razorpayKeyId: RAZORPAY_KEY_ID,
         showGlobalLoading,
         hideGlobalLoading,
         isGlobalLoading,
